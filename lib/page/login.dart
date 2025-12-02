@@ -103,6 +103,7 @@ class _LoginState extends State<Login> {
                     prefixIcon: Icon(Icons.lock, color: Colors.white),
 
                     filled: true,
+                    // ignore: deprecated_member_use
                     fillColor: Colors.white.withOpacity(0.3),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
@@ -143,9 +144,7 @@ class _LoginState extends State<Login> {
                     style: TextStyle(color: Colors.white),
                   ),
                   TextButton(
-                    onPressed: () {
-                      Get.to(Signup());
-                    },
+                    onPressed: () {},
                     child: const Text(
                       "SignUp Here",
                       style: TextStyle(

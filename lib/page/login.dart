@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/page/signup.dart';
+import 'package:food_delivery_app/page/wrapper.dart';
 import 'package:get/get.dart';
 
 import 'package:get/state_manager.dart';
@@ -27,6 +28,7 @@ class _LoginState extends State<Login> {
     } catch (e) {
       print(e);
     }
+    Get.offAll(Wrapper());
   }
 
   @override
@@ -98,12 +100,11 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                     ),
-                    hintText: "Enter  your any  Password",
+                    hintText: "Enter your Password",
                     hintStyle: const TextStyle(color: Colors.white54),
                     prefixIcon: Icon(Icons.lock, color: Colors.white),
 
                     filled: true,
-                    // ignore: deprecated_member_use
                     fillColor: Colors.white.withOpacity(0.3),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
@@ -144,7 +145,9 @@ class _LoginState extends State<Login> {
                     style: TextStyle(color: Colors.white),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(Signup());
+                    },
                     child: const Text(
                       "SignUp Here",
                       style: TextStyle(

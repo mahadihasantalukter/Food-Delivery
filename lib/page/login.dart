@@ -98,7 +98,7 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                     ),
-                    hintText: "Enter your Password",
+                    hintText: "Enter  your any  Password",
                     hintStyle: const TextStyle(color: Colors.white54),
                     prefixIcon: Icon(Icons.lock, color: Colors.white),
 

@@ -1,8 +1,13 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
+import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/page/login.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:food_delivery_app/page/Navigation/chat.dart';
+import 'package:food_delivery_app/page/Navigation/homepage.dart';
+import 'package:food_delivery_app/page/Navigation/profile.dart';
+import 'package:food_delivery_app/page/Navigation/search.dart';
+import 'package:food_delivery_app/page/Navigation/setting.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,31 +17,42 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  signeout() async {
-    await FirebaseAuth.instance.signOut();
-    Get.to(Login());
-  }
+  int cuttentTableIndex = 0;
 
+  final List<Widget> screens = [
+    Nav_homepage(),
+    search(),
+    chat(),
+    Profile(),
+    Setting(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Food Delevery App'), centerTitle: true),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            DrawerHeader(child: Text('')),
-            ListTile(
-              title: Text('Logout'),
-              leading: Icon(Icons.login_outlined),
-              onTap: () {
-                signeout();
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
+
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.transparent,
+        index: cuttentTableIndex,
+
+        onTap: (index) {
+          setState(() {
+            cuttentTableIndex = index;
+          });
+        },
+        height: 60,
+        color: Colors.white,
+        items: [
+          CurvedNavigationBarItem(child: Icon(Icons.home_outlined)),
+          CurvedNavigationBarItem(child: Icon(Icons.search)),
+          CurvedNavigationBarItem(child: Icon(Icons.chat_bubble_outline)),
+
+          CurvedNavigationBarItem(child: Icon(Icons.perm_identity)),
+          CurvedNavigationBarItem(child: Icon(Icons.settings_outlined)),
+        ],
       ),
-      body: Center(child: Text('')),
+
+      body: screens[cuttentTableIndex],
     );
   }
 }

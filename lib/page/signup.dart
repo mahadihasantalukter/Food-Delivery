@@ -63,6 +63,26 @@ class _SignupState extends State<Signup> {
               TextField(
                 controller: emailController,
                 decoration: InputDecoration(
+                  hintText: "Your name",
+                  hintStyle: const TextStyle(color: Colors.white54),
+                  prefixIcon: Icon(Icons.email, color: Colors.white),
+                  filled: true,
+                  fillColor: Colors.white.withOpacity(0.3),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: BorderSide.none,
+                  ),
+                  contentPadding: const EdgeInsets.symmetric(
+                    vertical: 16,
+                    horizontal: 24,
+                  ),
+                ),
+                style: const TextStyle(color: Colors.black),
+              ),
+              SizedBox(height: 16),
+              TextField(
+                controller: emailController,
+                decoration: InputDecoration(
                   hintText: "Enter your email",
                   hintStyle: const TextStyle(color: Colors.white54),
                   prefixIcon: Icon(Icons.email, color: Colors.white),
@@ -129,6 +149,21 @@ class _SignupState extends State<Signup> {
                       "Signup",
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
+                  ),
+                  SizedBox(height: 20),
+                  DropdownButtonFormField(
+                    decoration: InputDecoration(
+                      labelText: "Role",
+                      border: OutlineInputBorder(),
+                    ),
+                    items:
+                        ["Admin", "User"].map((role) {
+                          return DropdownMenuItem(
+                            value: role,
+                            child: Text(role),
+                          );
+                        }).toList(),
+                    onChanged: (String? newValue) {},
                   ),
                 ],
               ),

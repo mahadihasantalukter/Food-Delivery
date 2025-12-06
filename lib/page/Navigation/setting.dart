@@ -13,7 +13,7 @@ class Setting extends StatefulWidget {
 }
 
 class _SettingState extends State<Setting> {
-  signout()async{
+  signout() async {
     await FirebaseAuth.instance.signOut();
     Get.to(Login());
   }
@@ -31,7 +31,6 @@ class _SettingState extends State<Setting> {
                 InkWell(
                   onTap: () {
                     signout();
-                    
                   },
                   child: Text(
                     "1. Logout",
@@ -40,6 +39,18 @@ class _SettingState extends State<Setting> {
                 ),
                 SizedBox(width: 10),
                 Icon(Icons.logout_outlined),
+              ],
+            ),
+            SizedBox(height: 10),
+            Row(
+              children: [
+                InkWell(
+                  onTap: () {},
+                  child: Text(
+                    "2. You are saler",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
               ],
             ),
           ],

@@ -14,6 +14,7 @@ class Signup extends StatefulWidget {
 class _SignupState extends State<Signup> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
   var isobscure = true.obs;
   Signup() async {
     // Using a try-catch block for robust error handling
@@ -61,7 +62,7 @@ class _SignupState extends State<Signup> {
               ),
               const SizedBox(height: 40),
               TextField(
-                controller: emailController,
+                controller: nameController,
                 decoration: InputDecoration(
                   hintText: "Your name",
                   hintStyle: const TextStyle(color: Colors.white54),
@@ -151,20 +152,7 @@ class _SignupState extends State<Signup> {
                     ),
                   ),
                   SizedBox(height: 20),
-                  DropdownButtonFormField(
-                    decoration: InputDecoration(
-                      labelText: "Role",
-                      border: OutlineInputBorder(),
-                    ),
-                    items:
-                        ["Admin", "User"].map((role) {
-                          return DropdownMenuItem(
-                            value: role,
-                            child: Text(role),
-                          );
-                        }).toList(),
-                    onChanged: (String? newValue) {},
-                  ),
+                  
                 ],
               ),
             ],

@@ -66,7 +66,7 @@ class _SignupState extends State<Signup> {
                 decoration: InputDecoration(
                   hintText: "Your name",
                   hintStyle: const TextStyle(color: Colors.white54),
-                  prefixIcon: Icon(Icons.email, color: Colors.white),
+                  prefixIcon: Icon(Icons.person, color: Colors.white),
                   filled: true,
                   fillColor: Colors.white.withOpacity(0.3),
                   border: OutlineInputBorder(
@@ -152,7 +152,6 @@ class _SignupState extends State<Signup> {
                     ),
                   ),
                   SizedBox(height: 20),
-                  
                 ],
               ),
             ],

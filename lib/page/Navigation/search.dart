@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class search extends StatefulWidget {
   const search({super.key});
@@ -10,6 +11,6 @@ class search extends StatefulWidget {
 class _searchState extends State<search> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold();
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class chat extends StatefulWidget {
   const chat({super.key});
@@ -10,6 +11,6 @@ class chat extends StatefulWidget {
 class _chatState extends State<chat> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold();
   }
 }

@@ -38,7 +38,7 @@ class _UploadFileState extends State<UploadFile> {
       {
         ScaffoldMessenger.of(
           context,
-        ).showSnackBar(const SnackBar(content: Text('Upload Success')));
+        ).showSnackBar(const SnackBar(content: Text('Please select an image')));
         return;
       }
       setState(() {

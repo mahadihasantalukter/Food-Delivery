@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/page/wrapper.dart';
+import 'package:food_delivery_app/page/home/wrapper.dart';
 
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 

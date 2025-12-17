@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/page/Admin_pages/upload_file.dart';
-import 'package:food_delivery_app/page/login.dart';
+import 'package:food_delivery_app/page/home/login.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 

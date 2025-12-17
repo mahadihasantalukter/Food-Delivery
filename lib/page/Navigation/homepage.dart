@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/page/Auth_service/auth_service.dart';
+import 'package:food_delivery_app/page/home/user%20home%20pages/ueser_pages.dart';
 
 class Nav_homepage extends StatefulWidget {
   const Nav_homepage({super.key});
@@ -38,12 +39,9 @@ class _Nav_homepageState extends State<Nav_homepage> {
           return ListView.builder(
             itemCount: products.length,
             itemBuilder: (context, index) {
-              final product = snapshot.data!.docs[index];
-              return ListTile(
-                title: Text(product['name']),
-                subtitle: Text(product['description']),
-                trailing: Text(product['price'].toString()),
-              );
+              final product = products[index];
+              return UeserPages(product: product);
+              
             },
           );
         },

@@ -82,7 +82,7 @@ class _UploadFileState extends State<UploadFile> {
               Color.fromARGB(255, 2, 41, 53),
             ],
             begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
+            end: Alignment.bottomCenter, 
           ),
         ),
         child: Padding(
